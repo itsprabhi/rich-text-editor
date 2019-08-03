@@ -1,0 +1,32 @@
+body{
+    background: #313131;
+    color:white;
+}
+.blog-editor{
+    width:100%;
+    margin:auto;
+}
+.editor-features{
+    margin: 20px auto;
+    width:90%;
+    display:flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.editor-field{
+    width:99%;
+    margin-left:5px;
+    background: white;
+    margin: 50px auto;
+}
+.editor-features > button, .publish > button{
+    background: rgb(38, 87, 247);
+    padding: 10px 25px;
+    color:white;
+    margin: 5px;
+    border:none;
+    border-radius:5px;
+}
+.editor-features > button:hover{
+    background: rgb(36, 180, 216);
+}

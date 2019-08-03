@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body onload = 'enableTextField()'>
+    <div class = 'blog-editor'>
+        <div class = 'editor-features'>
+            <button onclick = 'command("bold")' class = 'fa fa-bold'></button>
+            <button onclick = 'command("italic")' class = 'fa fa-italic'></button>
+            <button onclick = 'command("underline")' class = 'fa fa-underline'></button>
+            <button onclick = 'command("strikethrough")' class = 'fa fa-strikethrough'></button>
+            <button onclick = 'command("justifyLeft")' class = 'fa fa-align-left'></button>
+            <button onclick = 'command("justifyCenter")' class = 'fa fa-align-center'></button>
+            <button onclick = 'command("justifyRight")' class = 'fa fa-align-right'></button>
+            <button onclick = 'command("justifyFull")' class = 'fa fa-align-justify'></button>
+            <button onclick = 'command("cut")' class = 'fa fa-cut'></button>
+            <button onclick = 'command("copy")' class = 'fa fa-copy'></button>
+            <button onclick = 'command("indent")' class = 'fa fa-indent'></button>
+            <button onclick = 'command("outdent")' class = 'fa fa-dedent'></button>
+            <button onclick = 'command("subscript")' class = 'fa fa-subscript'></button>
+            <button onclick = 'command("superscript")' class = 'fa fa-superscript'></button>
+            <button onclick = 'command("undo")' class = 'fa fa-undo'></button>
+            <button onclick = 'command("repeat")' class = 'fa fa-repeat'></button>
+            <button onclick = 'command("insertUnorderedList")' class = 'fa fa-list-ul'></button>
+            <button onclick = 'command("insertOrderedList")' class = 'fa fa-list-ol'></button>
+            <button onclick = 'command("insertParagraph")' class = 'fa fa-paragraph'></button>
+            <select onchange="commandWithArg('formatBlock',this.value)">
+                <option class = 'option-tags heading-tags' value = 'h1'>H1</option>
+                <option class = 'option-tags heading-tags' value = 'h2'>H2</option>
+                <option class = 'option-tags heading-tags' value = 'h3'>H3</option>
+                <option class = 'option-tags heading-tags' value = 'h4'>H4</option>
+                <option class = 'option-tags heading-tags' value = 'h5'>H5</option>
+                <option class = 'option-tags heading-tags' value = 'h6'>H6</option>
+            </select>
+            <select onchange="commandWithArg('fontSize',this.value)">
+                <option class = 'option-tags'>1</option>
+                <option class = 'option-tags'>2</option>
+                <option class = 'option-tags'>3</option>
+                <option class = 'option-tags'>4<option>
+                <option class = 'option-tags'>5</option>
+            </select>
+            <div>
+                Color: <input type = 'color' onchange="commandWithArg('foreColor',this.value)">
+            </div>
+            <button onclick = 'command("insertHorizontalRule")'>HR</button>
+            <button onclick = 'commandWithArg("createLink",prompt("Enter Link","http:/ /"))' class = 'fa fa-link'></button>
+            <button onclick = 'command("unlink")' class = 'fa fa-unlink'></button>
+            <button onclick = 'toggleSrc()' class = 'fa fa-code'></button>
+            <button onclick = 'commandWithArg("insertImage",prompt("Enter img url",""))' class = 'fa fa-file-image-o'></button>
+            <button onclick = 'toggleEdit()'>TOGGLE EDIT</button>
+            <button onclick = 'command("selectAll")'>Select All</button>
+        </div> 
+            <iframe class = 'editor-field' name = 'editor' height="800px" ></iframe>
+            <div class = 'publish'>
+            Publish Post :
+            <button type="submit" id = 'submit' name = 'submit' onclick = 'exporting()' method = 'Post'>Publish</button>
+            </div>
+        </form>
+    </div>
+    <script src = 'main.js'></script>
+</body>
+</html>
